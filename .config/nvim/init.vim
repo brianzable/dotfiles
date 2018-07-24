@@ -41,9 +41,25 @@ map <silent> <LocalLeader>nh :nohls<CR>
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
 
+" Comments
+map <silent> <LocalLeader>cc :TComment<CR>
+
+" Vimux
+let g:VimuxUseNearestPane = 1
+let test#strategy = "vimux"
+map <silent> <LocalLeader>vp :VimuxPromptCommand<CR>
+
+" Ruby Settings
+autocmd FileType ruby runtime ruby.vim
+
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 Plug 'benmills/vimux'
+Plug 'janko-m/vim-test'
+Plug 'dewyze/vim-ruby-block-helpers'
+Plug 'tomtom/tcomment_vim'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
 
 call plug#end()
