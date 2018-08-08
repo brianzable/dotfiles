@@ -1,5 +1,3 @@
-set termguicolors
-set background=dark
 set number
 set ruler
 set showmatch
@@ -10,8 +8,6 @@ set backspace=indent,eol,start
 set scrolloff=5
 set smartcase
 set textwidth=0 nosmartindent tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-
-syntax on
 
 " NerdTree
 map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
@@ -38,9 +34,6 @@ map <silent> <Leader>cw :Trim<CR>
 " Clear highlighting
 map <silent> <LocalLeader>nh :nohls<CR>
 
-" Plugins
-call plug#begin('~/.config/nvim/plugged')
-
 " Comments
 map <silent> <LocalLeader>cc :TComment<CR>
 
@@ -52,6 +45,9 @@ map <silent> <LocalLeader>vp :VimuxPromptCommand<CR>
 " Ruby Settings
 autocmd FileType ruby runtime ruby.vim
 
+" Plugins
+call plug#begin('~/.config/nvim/plugged')
+
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
@@ -61,5 +57,12 @@ Plug 'dewyze/vim-ruby-block-helpers'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
+Plug 'napcs/vim-mycontrast'
 
 call plug#end()
+
+" Color settings
+syntax on
+set termguicolors
+set background=dark
+colorscheme mycontrast
