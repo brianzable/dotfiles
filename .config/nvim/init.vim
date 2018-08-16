@@ -57,6 +57,7 @@ Plug 'dewyze/vim-ruby-block-helpers'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-fugitive'
 Plug 'napcs/vim-mycontrast'
 
 call plug#end()
