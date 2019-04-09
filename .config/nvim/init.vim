@@ -56,6 +56,7 @@ Plug 'janko-m/vim-test'
 Plug 'dewyze/vim-ruby-block-helpers'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-ruby/vim-ruby'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-fugitive'
 Plug 'napcs/vim-mycontrast'
@@ -67,3 +68,6 @@ syntax on
 set termguicolors
 set background=dark
 colorscheme mycontrast
+
+" vim-go dependencies
+filetype plugin indent on
