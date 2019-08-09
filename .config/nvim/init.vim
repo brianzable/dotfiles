@@ -60,6 +60,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-fugitive'
 Plug 'napcs/vim-mycontrast'
+Plug 'mattn/emmet-vim'
+Plug 'tmhedberg/matchit'
 
 call plug#end()
 
