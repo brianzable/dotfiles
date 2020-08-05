@@ -24,7 +24,6 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd BufRead,InsertLeave * match ExtraWhitespace /\s\+$/
 
-
 function! Trim()
   %s/\s*$//
   ''
@@ -69,6 +68,7 @@ Plug 'tmhedberg/matchit'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'Quramy/vim-js-pretty-template'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -80,3 +80,5 @@ colorscheme mycontrast
 
 " vim-go dependencies
 filetype plugin indent on
+
+source $HOME/.config/nvim/coc.vim
