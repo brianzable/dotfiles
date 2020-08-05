@@ -24,6 +24,7 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd BufRead,InsertLeave * match ExtraWhitespace /\s\+$/
 
+
 function! Trim()
   %s/\s*$//
   ''
@@ -45,6 +46,9 @@ map <silent> <LocalLeader>vp :VimuxPromptCommand<CR>
 " Ruby Settings
 autocmd FileType ruby runtime ruby.vim
 
+" Typescript support
+autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
 
@@ -62,6 +66,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'napcs/vim-mycontrast'
 Plug 'mattn/emmet-vim'
 Plug 'tmhedberg/matchit'
+Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
+Plug 'Quramy/vim-js-pretty-template'
 
 call plug#end()
 
