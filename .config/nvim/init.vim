@@ -37,16 +37,27 @@ map <silent> <LocalLeader>nh :nohls<CR>
 " Comments
 map <silent> <LocalLeader>cc :TComment<CR>
 
+" Ruby Settings
+autocmd FileType ruby runtime ruby.vim
+
+" JavaScript Settings
+autocmd FileType javascript,typescript runtime javascript.vim
+
+" Typescript support
+autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+
+" Vim test shortcuts
+map <silent> <LocalLeader>rc :TestContext<CR>
+map <silent> <LocalLeader>rb :wa<CR> :TestFile<CR>
+map <silent> <LocalLeader>rf :wa<CR> :TestNearest<CR>
+map <silent> <LocalLeader>rl :wa<CR> :TestLast<CR>
+map <silent> <LocalLeader>rx :wa<CR> :VimuxCloseRunner<CR>
+map <silent> <LocalLeader>ri :wa<CR> :VimuxInspectRunner<CR>
+
 " Vimux
 let g:VimuxUseNearestPane = 1
 let test#strategy = "vimux"
 map <silent> <LocalLeader>vp :VimuxPromptCommand<CR>
-
-" Ruby Settings
-autocmd FileType ruby runtime ruby.vim
-
-" Typescript support
-autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
@@ -65,10 +76,15 @@ Plug 'tpope/vim-fugitive'
 Plug 'napcs/vim-mycontrast'
 Plug 'mattn/emmet-vim'
 Plug 'tmhedberg/matchit'
+Plug 'pangloss/vim-javascript'    " JavaScript support
+Plug 'leafgarland/typescript-vim' " TypeScript syntax
+Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+Plug 'jparise/vim-graphql'        " GraphQL syntax
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 call plug#end()
 
